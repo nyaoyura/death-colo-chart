@@ -18,10 +18,10 @@
   .container
     %h1 です☆ころちゃーと
     .pull-right
-      %select{:id => "nth-deathcolo", :class => "selectpicker"}
+      %select.selectpicker{:id => "nth-deathcolo"}
         - max.downto(min) do |i|
           %option{:value => "#{i}"} 第#{i}回デスマコロシアム集計
-      %button{:type => "button", :id => "refresh", :class => "btn btn-default"} じっこう！
+      %button.btn.btn-default{:type => "button", :id => "refresh"} じっこう！
     %br
     %br
     .pull-right
