@@ -24,7 +24,7 @@ Just run the ruby code
 That's all.
 
 * To see the chart, just access to [http://localhost:4567](http://localhost:4567)
-* To get original JSON data, access to [http://localhost:4567](http://localhost:4567/stats/11)
+* To get original JSON data, access to [http://localhost:4567/stats/11](http://localhost:4567/stats/11)
   * `/stats/n` where 2 ≦ n (≦ 11)
 
 #### Change language color
