@@ -100,9 +100,11 @@ $ ->
       # format and register the data to Highcharts series
       for name in Object.keys langs
         color = langColors[name]
+        mins  = langs[name][propName.min].reverse()
+        avgs  = langs[name][propName.avg].reverse()
         series.push
           name: name
-          data: langs[name][propName.min].reverse()
+          data: mins
           zIndex: 1
           color: color
           marker:
@@ -112,7 +114,7 @@ $ ->
         if showMinAvgArea
           series.push
             name: "-> min-avg"
-            data: langs[name][propName.avg].reverse()
+            data: avgs
             type: 'arearange'
             lineWidth: 0
             linkedTo: ':previous'

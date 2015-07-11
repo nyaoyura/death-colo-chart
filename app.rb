@@ -42,7 +42,7 @@ before do
       charset = f.charset
       f.read
     }
-    doc = Nokogiri::HTML.parse(html, nil, 'utf-8')
+    doc = Nokogiri::HTML.parse(html, nil, charset)
     title = doc.css("h1.entry-title>a").text.strip
     trap = ":contains('エントリー状況')"
     targets = doc.css("h3#{trap},h5#{trap}")
