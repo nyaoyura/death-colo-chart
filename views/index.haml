@@ -18,25 +18,26 @@
   .container
     %h1 です☆ころちゃーと
     .pull-right
-      %select.selectpicker{:id => "nth-deathcolo"}
+      %select#nth-deathcolo.selectpicker
         - max.downto(min) do |i|
           %option{:value => "#{i}"} 第#{i}回デスマコロシアム集計
-      %button.btn.btn-default{:type => "button", :id => "refresh"} じっこう！
+      %button#refresh.btn.btn-default{:type => "button"} じっこう！
     %br
     %br
     .pull-right
       .checkbox-inline
-        %input{:type => "checkbox", :id => "check-all", :checked => true} 全言語選択
+        %input#check-all{:type => "checkbox", :checked => true} 全言語選択
       .checkbox-inline
-        %input{:type => "checkbox", :id => "magnify-points", :checked => true} 人数強調
+        %input#magnify-points{:type => "checkbox", :checked => true} 人数強調
       .checkbox-inline
-        %input{:type => "checkbox", :id => "show-min-avg-area"} 最短-平均エリア表示
+        %input#show-min-avg-area{:type => "checkbox"} 最短-平均エリア表示
     %br
     #display-langs.jumbotron.row
       - langs=["Ada", "Assembler (nasm-2.11.05)", "Assembler (gcc-4.9.2)", "AWK (gawk)", "AWK (mawk)", "Bash", "bc", "Brainf**k", "C", "C#", "C++ 4.3.2", "C++ 4.9.2", "C++14", "C99 strict", "CLIPS", "Clojure", "COBOL", "COBOL 85", "Common Lisp (clisp)", "D", "D (dmd)", "Erlang", "F#", "Factor", "Falcon", "Forth", "Fortran", "Go", "Groovy", "Haskell", "Icon", "Intercal", "Java", "Java7", "JavaScript (rhino)", "JavaScript (spidermonkey)", "Lua", "Nemerle", "Nice", "Nimrod", "Node.js", "Objective-C", "Ocaml", "Octave", "Oz", "PARI/GP", "Pascal (fpc)", "Pascal (gpc)", "Perl", "Perl 6", "PHP", "Pike", "Prolog (gnu)", "Prolog (swi)", "Python", "Python (Pypy)", "Python 3", "R", "Ruby", "Scala", "Scheme (chicken)", "Scheme (guile)", "Smalltalk", "SQL", "Tcl", "Unlambda", "VB.NET", "Whitespace"]
       - langs.each_slice(17).to_a.each do |lgs|
         .col-md-3
           - lgs.each do |lang|
-            %input{:type => "checkbox", :value => "#{lang}", :id => "#{lang}", :checked => true} #{lang}
+            .checkbox-inline
+              %input{:type => "checkbox", :value => "#{lang}", :id => "#{lang}", :checked => true} #{lang}
             %br
     #death-colo-chart{:style => "min-width: 800px; height: 640px; margin: 0 auto"}

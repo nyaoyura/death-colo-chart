@@ -73,7 +73,7 @@ $ ->
         num  : "人数"
         min  : getPropertyLike res.langs[0][0], /最短/
         avg  : getPropertyLike res.langs[0][0], /平均/
-      # make objects for each languages
+      # make objects for each language
       for i in [0...numDays]
         for j in [0...numLangMax]
           if res.langs[i][j]
@@ -83,7 +83,7 @@ $ ->
               langs[name][propName.num] or= []
               langs[name][propName.min] or= []
               langs[name][propName.avg] or= []
-      # collect data for each languages
+      # collect data for each language
       for i in [0...numDays]
         for name, lang of langs
           j = arrayObjectIndexOf res.langs[i], name, propName.lang
@@ -125,7 +125,7 @@ $ ->
       $('html,body').animate
         scrollTop: $('#death-colo-chart').offset().top
       , 'normal'
-      # highcharts options
+      # highcharts configurations
       $('#death-colo-chart').highcharts
         chart:
           zoomType: 'x'
