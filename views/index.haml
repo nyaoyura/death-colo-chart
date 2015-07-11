@@ -1,0 +1,42 @@
+!!! 5
+%html{:lang => "ja"}
+%head
+  %meta{:charset => "utf-8"}
+  %title
+  %link{:rel  => :stylesheet,
+        :href => "//maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css"}
+  %link{:rel  => :stylesheet,
+        :href => "//cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.7.3/css/bootstrap-select.min.css"}
+  %script{:src => "//code.jquery.com/jquery-2.1.4.js"}
+  %script{:src => "//code.highcharts.com/highcharts.js"}
+  %script{:src => "//code.highcharts.com/highcharts-more.js"}
+  %script{:src => "//code.highcharts.com/modules/exporting.js"}
+  %script{:src => "//maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"}
+  %script{:src => "//cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.7.3/js/bootstrap-select.min.js"}
+  %script{:src => "/javascripts/main.js"}
+%body
+  %div{:class => "container"}
+    %h1 です☆ころちゃーと
+    .pull-right
+      %select{:id => "nth-deathcolo", :class => "selectpicker"}
+        - max.downto(min) do |i|
+          %option{:value => "#{i}"} 第#{i}回デスマコロシアム集計
+      %button{:type => "button", :id => "refresh", :class => "btn btn-default"} じっこう！
+    %br
+    %br
+    .pull-right
+      .checkbox-inline
+        %input{:type => "checkbox", :id => "check-all", :checked => true} 全言語選択
+      .checkbox-inline
+        %input{:type => "checkbox", :id => "magnify-points", :checked => true} 人数強調
+      .checkbox-inline
+        %input{:type => "checkbox", :id => "show-min-avg-area"} 最短-平均エリア表示
+    %br
+    #display-langs.jumbotron.row
+      - langs=["Ada", "Assembler (nasm-2.11.05)", "Assembler (gcc-4.9.2)", "AWK (gawk)", "AWK (mawk)", "Bash", "bc", "Brainf**k", "C", "C#", "C++ 4.3.2", "C++ 4.9.2", "C++14", "C99 strict", "CLIPS", "Clojure", "COBOL", "COBOL 85", "Common Lisp (clisp)", "D", "D (dmd)", "Erlang", "F#", "Factor", "Falcon", "Forth", "Fortran", "Go", "Groovy", "Haskell", "Icon", "Intercal", "Java", "Java7", "JavaScript (rhino)", "JavaScript (spidermonkey)", "Lua", "Nemerle", "Nice", "Nimrod", "Node.js", "Objective-C", "Ocaml", "Octave", "Oz", "PARI/GP", "Pascal (fpc)", "Pascal (gpc)", "Perl", "Perl 6", "PHP", "Pike", "Prolog (gnu)", "Prolog (swi)", "Python", "Python (Pypy)", "Python 3", "R", "Ruby", "Scala", "Scheme (chicken)", "Scheme (guile)", "Smalltalk", "SQL", "Tcl", "Unlambda", "VB.NET", "Whitespace"]
+      - langs.each_slice(17).to_a.each do |lgs|
+        .col-md-3
+          - lgs.each do |lang|
+            %input{:type => "checkbox", :value => "#{lang}", :id => "#{lang}", :checked => true} #{lang}
+            %br
+    #death-colo-chart{:style => "min-width: 800px; height: 640px; margin: 0 auto"}
