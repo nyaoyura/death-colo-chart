@@ -83,6 +83,6 @@ get '/stats/:n' do |n|
   JSON.generate res
 end
 
-get '/javascripts/main.js' do
-  coffee :main
+get '/javascripts/script.js' do
+  coffee :script
 end

@@ -12,6 +12,8 @@
 ![display options](./imgs/deathma11th_lang_options.png "display options")
 
 ## Installation
+Clone this repository, then
+
 `bundle install`
 
 ## Usage
@@ -21,12 +23,12 @@ Just run the ruby code
 
 That's all.
 
-* To see the chart, just access to http://localhost:4567
-* To get original JSON data, access to http://localhost:4567/stats/11
-  * `/stats/n` where 2 ≦ n (≦ 11)
+* To see the chart, just access to [http://localhost:4567](http://localhost:4567)
+* To get original JSON data, access to [http://localhost:4567](http://localhost:4567/stats/11)
+  * `/stats/n` where $2 \\leq n (\\leq 11)$
 
 #### Change language color
-* Change or add to `langColors` array in `/public/javacripts/script.js`
+* Change or add to `langColors` array in `/views/script.coffee`
 * Currently some language colors are pre-defined as my feeling, and the others are colored by *highcharts*'s default color if any.
 
 ![Languages colorization](./imgs/deathma11th_lang_colors.png "Languages colorization")
