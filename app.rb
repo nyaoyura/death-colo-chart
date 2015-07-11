@@ -63,7 +63,6 @@ end
 
 get '/' do
   min, max = @urls.keys.minmax
-  #erb :index, :locals => {:min => min, :max => max}
   haml :index, :locals => {:min => min, :max => max}
 end
 
