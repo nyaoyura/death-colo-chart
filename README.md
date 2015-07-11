@@ -28,7 +28,7 @@ That's all.
   * `/stats/n` where 2 ≦ n (≦ 11)
 
 #### Change language color
-* Change or add to `langColors` array in `/views/script.coffee`
+* Modify `langColors` object in `/views/script.coffee`
 * Currently some language colors are pre-defined as my feeling, and the others are colored by *highcharts*'s default color if any.
 
 ![Languages colorization](./imgs/deathma11th_lang_colors.png "Languages colorization")
