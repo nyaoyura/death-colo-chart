@@ -32,13 +32,13 @@ langColors =
   "VB.NET"                   : "#ff26e9"
 
 sigmoid = (t) ->
-  1/(1+Math.pow Math.E, -t)
+  1 / (1 + Math.pow Math.E, -t)
 
 pmap = (value, istart, istop, ostart, ostop) ->
   ostart + (ostop - ostart) * ((value - istart) / (istop - istart))
 
 arrayObjectIndexOf = (ary, elem, prop) ->
-  for i in [0...ary.length] by 1
+  for i in [0...ary.length]
     return i if ary[i][prop] is elem
   return -1
 
