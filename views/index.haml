@@ -33,7 +33,7 @@
         %input#show-min-avg-area{:type => "checkbox"} 最短-平均エリア表示
     %br
     #display-langs.jumbotron.row
-      - langs=["Ada", "Assembler (nasm-2.11.05)", "Assembler (gcc-4.9.2)", "AWK (gawk)", "AWK (mawk)", "Bash", "bc", "Brainf**k", "C", "C#", "C++ 4.3.2", "C++ 4.9.2", "C++14", "C99 strict", "CLIPS", "Clojure", "COBOL", "COBOL 85", "Common Lisp (clisp)", "D", "D (dmd)", "Erlang", "F#", "Factor", "Falcon", "Forth", "Fortran", "Go", "Groovy", "Haskell", "Icon", "Intercal", "Java", "Java7", "JavaScript (rhino)", "JavaScript (spidermonkey)", "Lua", "Nemerle", "Nice", "Nimrod", "Node.js", "Objective-C", "Ocaml", "Octave", "Oz", "PARI/GP", "Pascal (fpc)", "Pascal (gpc)", "Perl", "Perl 6", "PHP", "Pike", "Prolog (gnu)", "Prolog (swi)", "Python", "Python (Pypy)", "Python 3", "R", "Ruby", "Scala", "Scheme (chicken)", "Scheme (guile)", "Smalltalk", "SQL", "Tcl", "Unlambda", "VB.NET", "Whitespace"]
+      - langs=["Ada", "Assembler", "AWK (gawk)", "AWK (mawk)", "Bash", "bc", "Brainf**k", "C", "C#", "C++", "C++14", "C99 strict", "CLIPS", "Clojure", "COBOL", "COBOL 85", "Common Lisp (clisp)", "D", "D (dmd)", "Erlang", "F#", "Factor", "Falcon", "Forth", "Fortran", "Go", "Groovy", "Haskell", "Icon", "Intercal", "Java", "Java7", "JavaScript (rhino)", "JavaScript (spidermonkey)", "Lua", "Nemerle", "Nice", "Nimrod", "Node.js", "Objective-C", "Ocaml", "Octave", "Oz", "PARI/GP", "Pascal (fpc)", "Pascal (gpc)", "Perl", "Perl 6", "PHP", "Pike", "Prolog (gnu)", "Prolog (swi)", "Python", "Python (Pypy)", "Python 3", "R", "Ruby", "Scala", "Scheme (chicken)", "Scheme (guile)", "Smalltalk", "SQL", "Tcl", "Unlambda", "VB.NET", "Whitespace"]
       - langs.each_slice(17) do |lgs|
         .col-md-3
           - lgs.each do |lang|

@@ -78,7 +78,7 @@ $ ->
         for j in [0...numLangMax]
           if res.langs[i][j]
             name = res.langs[i][j][propName.lang]
-            if displayLangs.indexOf(name) isnt -1
+            if (name.indexOf(langName) isnt -1 for langName in displayLangs).length > 0
               langs[name] or= {}
               langs[name][propName.num] or= []
               langs[name][propName.min] or= []

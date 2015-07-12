@@ -18,7 +18,7 @@ end
 
 def treat elem, f
   header = elem.css("th").map{|h|h.text.strip}
-  stats  = elem.css("tr:gt(1)").map{|td|f.call(td)}
+  stats  = elem.css("tr").map{|td|f.call(td)}[1..-1]
   stats.map{|stat|Hash[*header.zip(stat).flatten]}
 end
 
