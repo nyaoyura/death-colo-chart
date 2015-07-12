@@ -6,8 +6,6 @@ langColors =
   "Bash"                     : "#a85817"
   "Brainf**k"                : "rgb(150, 134, 109)"
   "C#"                       : "#7cecb0"
-  "C++ 4.3.2"                : "#fff61f"
-  "C++ 4.9.2"                : "#bffe65"
   "C++ 14"                   : "#a1f6be"
   "C99 strict "              : "#e2c715"
   "C"                        : "#c1ad29"
@@ -78,7 +76,7 @@ $ ->
         for j in [0...numLangMax]
           if res.langs[i][j]
             name = res.langs[i][j][propName.lang]
-            if (name.indexOf(langName) isnt -1 for langName in displayLangs).length > 0
+            if (name.indexOf(langName) isnt -1 for langName in displayLangs).filter((p) -> p).length > 0
               langs[name] or= {}
               langs[name][propName.num] or= []
               langs[name][propName.min] or= []
