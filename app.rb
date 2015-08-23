@@ -25,6 +25,7 @@ end
 before do
   # 『デスマコロシアム』問題の参加状況集計記事URL
   @urls = {
+    12 => "http://tbpgr.hatenablog.com/entry/2015/07/26/030211",
     11 => "http://tbpgr.hatenablog.com/entry/2015/05/10/224026",
     10 => "http://tbpgr.hatenablog.com/entry/2015/01/25/043826",
      9 => "http://tbpgr.hatenablog.com/entry/20141223/1419335771",
@@ -66,7 +67,7 @@ get '/' do
   haml :index, :locals => {:min => min, :max => max}
 end
 
-get '/stats/:n' do |n|
+get '/stats/:n', :provides => :json do |n|
   dc = @deathcolo[n.to_i]
   res = {:title => dc.title, :dates => [], :summaries => [], :langs => []}
   dc.data.each do |d|
@@ -75,11 +76,11 @@ get '/stats/:n' do |n|
       td.text.strip.split(/\n/).map{|t|t.gsub(/\(.*\)/,'').rstrip.to_i}
     })
     res[:langs] << treat(d.langs, -> td {
-        lang,n,pnt,min,avg = td.text.strip.split /\n/
-        [lang,n.to_i,pnt.to_i,min.to_i,avg.to_i]
-      })
+      lang,n,pnt,min,avg = td.text.strip.split /\n/
+      [lang,n.to_i,pnt.to_i,min.to_i,avg.to_i]
+    })
   end
-  JSON.generate res
+  JSON.pretty_generate res
 end
 
 get '/javascripts/script.js' do
